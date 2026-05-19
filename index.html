@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Brand Architecture Audit — G One Productions — Founding Mothers Media</title>
+<meta name="description" content="Brand architecture audit for G One Productions — content and paid ads firm for service-based businesses, founded by Ahmod Goins.">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&family=Inconsolata:wdth,wght@100,400;100,700;125,400;125,700&family=Instrument+Serif:ital@0;1&display=swap');
+
+:root {
+  --mud:     #2c2416;
+  --mauve:   #9a6e6a;
+  --mustard: #c49a28;
+  --rose:    #bc8a84;
+  --cream:   #efeae0;
+  --gray:    #e3ded8;
+  --white:   #f5f3ef;
+  --serif:   'Instrument Serif', Georgia, serif;
+  --font-body: 'Atkinson Hyperlegible', sans-serif;
+  --font-ui: 'Inconsolata', monospace;
+}
+
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--font-body);
+  background: var(--white);
+  color: var(--mud);
+  font-size: 16px;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ── COVER ── */
+#cover {
+  background: var(--mud);
+  color: var(--cream);
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  grid-template-rows: 1fr auto;
+  padding: clamp(48px, 6vw, 80px);
+  border-bottom: 4px solid var(--mustard);
+}
+.cover-left { display: flex; flex-direction: column; justify-content: center; gap: 16px; }
+.cover-eyebrow { font-family: var(--font-ui); font-size: 12px; text-transform: uppercase; letter-spacing: 0.15em; color: var(--rose); font-stretch: expanded; }
+.cover-brand { font-family: var(--serif); font-size: clamp(64px, 9vw, 124px); line-height: 0.95; font-weight: 400; }
+.cover-sub { font-family: var(--serif); font-style: italic; font-size: clamp(24px, 3.2vw, 38px); color: var(--rose); line-height: 1.3; }
+.cover-right { display: flex; align-items: center; justify-content: center; }
+.screenshot-placeholder { width: 100%; aspect-ratio: 16/9; border: 1px solid rgba(239,234,224,0.15); border-radius: 4px; display: flex; align-items: center; justify-content: center; font-family: var(--font-ui); font-size: 13px; color: rgba(239,234,224,0.35); background: rgba(239,234,224,0.04); padding: 24px; text-align: center; }
+.cover-footer { grid-column: 1/-1; display: flex; justify-content: space-between; align-items: flex-end; padding-top: 40px; border-top: 1px solid rgba(239,234,224,0.1); margin-top: 40px; }
+.cover-footer-left { font-family: var(--font-ui); font-size: 12px; color: var(--mustard); }
+.cover-footer-right { font-family: var(--font-ui); font-size: 12px; color: rgba(239,234,224,0.5); }
+
+/* ── GLANCE ── */
+#glance { background: var(--white); padding: clamp(64px,8vw,104px) clamp(32px,6vw,80px); }
+.glance-cards { display: grid; grid-template-columns: repeat(3,1fr); gap: 24px; margin-bottom: 40px; }
+.glance-card { padding: 32px 28px; background: var(--white); border-top: 3px solid var(--mud); }
+.glance-card:first-child { border-top-color: var(--mustard); }
+.card-label { font-family: var(--font-ui); font-size: 11px; text-transform: uppercase; letter-spacing: 0.12em; color: var(--mauve); margin-bottom: 8px; font-stretch: expanded; }
+.card-value { font-family: var(--serif); font-size: clamp(32px,4vw,46px); line-height: 1.05; }
+.card-detail { font-family: var(--font-body); font-size: 14px; color: var(--mauve); margin-top: 8px; line-height: 1.5; }
+.glance-summary { font-family: var(--font-body); font-size: 15px; color: var(--mauve); line-height: 1.8; }
+.glance-summary span { display: block; }
+
+/* ── URGENT ── */
+#urgent { background: var(--mauve); color: var(--cream); padding: 28px clamp(32px,6vw,80px); display: flex; align-items: center; gap: 16px; }
+.urgent-label { font-family: var(--font-ui); font-size: 11px; text-transform: uppercase; letter-spacing: 0.12em; white-space: nowrap; font-stretch: expanded; }
+.urgent-body { font-family: var(--serif); font-style: italic; font-size: clamp(22px,2.4vw,28px); line-height: 1.5; }
+
+/* ── AUDIT SECTION ── */
+.audit-section { display: grid; grid-template-columns: 280px 1fr; }
+.audit-left { background: var(--mud); color: var(--cream); padding: clamp(48px,6vw,80px) 32px; position: relative; overflow: hidden; }
+.audit-left .section-eyebrow { font-family: var(--font-ui); font-size: 11px; text-transform: uppercase; letter-spacing: 0.12em; color: var(--rose); font-stretch: expanded; }
+.ghost-num { position: absolute; top: -8px; left: 16px; font-family: var(--serif); font-style: italic; font-size: clamp(120px,15vw,200px); line-height: 1; color: rgba(239,234,224,0.04); pointer-events: none; user-select: none; }
+.audit-left .section-title { font-family: var(--serif); font-size: clamp(40px,5.5vw,60px); line-height: 1.0; margin-top: clamp(48px,8vw,88px); }
+.audit-left .section-title em { font-style: italic; color: var(--rose); }
+.audit-right { background: var(--white); padding: clamp(48px,6vw,80px) clamp(32px,6vw,64px); }
+
+/* ── POS BLOCKS ── */
+.pos-block { margin-bottom: 36px; }
+.pos-header { display: flex; align-items: center; gap: 12px; margin-bottom: 10px; }
+.pos-icon { width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 16px; flex-shrink: 0; }
+.pos-icon.check { background: var(--mud); color: var(--cream); }
+.pos-icon.warn { background: var(--mustard); color: var(--mud); }
+.pos-label { font-family: var(--font-ui); font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; font-stretch: expanded; }
+.pos-body { font-family: var(--font-body); font-size: 15px; line-height: 1.7; }
+.fix-box { background: var(--mustard); color: var(--mud); padding: 24px 28px; margin-top: 28px; border-radius: 2px; }
+.fix-box .fix-label { font-family: var(--font-ui); font-size: 11px; text-transform: uppercase; letter-spacing: 0.12em; margin-bottom: 10px; opacity: 0.7; font-stretch: expanded; }
+.fix-box .fix-body { font-family: var(--serif); font-size: clamp(26px,3.2vw,36px); line-height: 1.3; }
+
+/* ── BRAND IDENTITY ── */
+#brand-identity { display: grid; grid-template-columns: 1fr 1.4fr; }
+.bi-left { background: var(--cream); padding: clamp(48px,6vw,80px) clamp(32px,4vw,48px); }
+.bi-left .section-eyebrow { font-family: var(--font-ui); font-size: 11px; text-transform: uppercase; letter-spacing: 0.12em; color: var(--mauve); margin-bottom: 16px; font-stretch: expanded; }
+.bi-left h2 { font-family: var(--serif); font-size: clamp(42px,5.5vw,64px); line-height: 1.0; margin-bottom: 24px; }
+.bi-left h2 em { font-style: italic; color: var(--mauve); }
+.bi-left .bi-body { font-family: var(--font-body); font-size: 15px; line-height: 1.7; }
+.bi-right { background: var(--white); padding: clamp(48px,6vw,80px) clamp(32px,4vw,48px); }
+.bi-screenshot { width: 100%; max-height: 480px; border-radius: 4px; margin-bottom: 32px; object-fit: cover; background: var(--gray); display: flex; align-items: center; justify-content: center; font-family: var(--font-ui); font-size: 13px; color: var(--mauve); padding: 32px; text-align: center; aspect-ratio: 16/10; }
+.impression-item { display: flex; align-items: flex-start; gap: 12px; margin-bottom: 20px; }
+.imp-icon { width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 14px; flex-shrink: 0; margin-top: 2px; }
+.imp-icon.check { background: var(--mud); color: var(--cream); }
+.imp-icon.warn { background: var(--mustard); color: var(--mud); }
+.imp-title { font-family: var(--font-body); font-size: 15px; font-weight: 700; margin-bottom: 2px; }
+.imp-desc { font-family: var(--font-body); font-size: 14px; line-height: 1.5; color: var(--mauve); }
+
+/* ── SPLIT SECTION ── */
+.split-section { display: grid; grid-template-columns: 1fr 1.2fr; border-bottom: 3px solid var(--mud); }
+.split-left { background: var(--white); padding: clamp(48px,6vw,80px) clamp(32px,4vw,48px); position: relative; overflow: hidden; }
+.split-left .section-eyebrow { font-family: var(--font-ui); font-size: 11px; text-transform: uppercase; letter-spacing: 0.12em; color: var(--mauve); font-stretch: expanded; }
+.split-left .section-title { font-family: var(--serif); font-size: clamp(42px,5.5vw,64px); line-height: 1.0; margin-top: clamp(48px,8vw,88px); }
+.split-left .current-copy-label { font-family: var(--font-ui); font-size: 11px; text-transform: uppercase; letter-spacing: 0.12em; color: var(--mauve); margin-top: 32px; margin-bottom: 8px; opacity: 0.7; font-stretch: expanded; }
+.split-left .current-copy { font-family: var(--serif); font-style: italic; font-size: clamp(20px,2vw,24px); line-height: 1.6; color: var(--mauve); }
+.split-right { background: var(--mud); color: var(--cream); padding: clamp(48px,6vw,80px) clamp(32px,4vw,48px); }
+.split-right p { font-family: var(--font-body); font-size: 15px; line-height: 1.7; margin-bottom: 20px; }
+.split-right em { color: var(--rose); font-style: italic; font-family: var(--serif); }
+
+/* ── OFFER ARCHITECTURE ── */
+#offer-arch { background: var(--white); padding: clamp(64px,8vw,104px) clamp(32px,6vw,80px); }
+.currently-box { background: var(--mustard); color: var(--mud); padding: 24px 28px; margin-bottom: 40px; border-radius: 2px; }
+.currently-box .cb-label { font-family: var(--font-ui); font-size: 11px; text-transform: uppercase; letter-spacing: 0.12em; margin-bottom: 8px; opacity: 0.7; font-stretch: expanded; }
+.currently-box .cb-body { font-family: var(--font-body); font-size: 15px; line-height: 1.7; }
+.offer-cards { display: grid; grid-template-columns: repeat(3,1fr); gap: 24px; }
+.offer-card { padding: 32px 28px; border-top: 3px solid var(--mud); }
+.offer-card:first-child { border-top-color: var(--mustard); }
+.offer-num { font-family: var(--serif); font-style: italic; font-size: 50px; color: var(--mustard); opacity: 0.6; line-height: 1; margin-bottom: 8px; }
+.offer-tier { font-family: var(--font-ui); font-size: 11px; text-transform: uppercase; letter-spacing: 0.12em; color: var(--mauve); margin-bottom: 8px; font-stretch: expanded; }
+.offer-name { font-family: var(--serif); font-size: clamp(28px,3.4vw,40px); line-height: 1.1; margin-bottom: 12px; }
+.offer-desc { font-family: var(--font-body); font-size: 14px; line-height: 1.6; color: var(--mauve); }
+
+/* ── DARK SECTION ── */
+.dark-section { background: var(--mud); color: var(--cream); padding: clamp(64px,8vw,104px) clamp(32px,6vw,80px); }
+.dark-section .section-eyebrow { font-family: var(--font-ui); font-size: 11px; text-transform: uppercase; letter-spacing: 0.12em; color: var(--rose); font-stretch: expanded; }
+.dark-section .section-title { font-family: var(--serif); font-size: clamp(42px,5.5vw,64px); line-height: 1.0; }
+.infra-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; margin-top: 40px; }
+.status-list { list-style: none; }
+.status-list li { padding: 10px 0; border-bottom: 1px solid rgba(239,234,224,0.08); font-family: var(--font-body); font-size: 15px; line-height: 1.5; display: flex; align-items: flex-start; gap: 12px; }
+.status-list li .status-icon { flex-shrink: 0; font-size: 14px; margin-top: 2px; }
+.status-list li .status-icon.check { color: var(--cream); }
+.status-list li .status-icon.gap { color: var(--mustard); }
+.tool-box { border: 1px solid rgba(239,234,224,0.1); padding: 32px; border-radius: 2px; }
+.tool-box h4 { font-family: var(--font-ui); font-size: 11px; text-transform: uppercase; letter-spacing: 0.12em; color: var(--rose); margin-bottom: 24px; font-stretch: expanded; }
+.tool-item { margin-bottom: 18px; }
+.tool-name { font-family: var(--serif); font-size: clamp(26px,2.8vw,34px); line-height: 1.2; }
+.tool-desc { font-family: var(--font-body); font-size: 14px; line-height: 1.5; color: var(--mauve); margin-top: 4px; }
+.tool-cta { font-family: var(--serif); font-style: italic; font-size: clamp(22px,2.2vw,28px); color: var(--rose); margin-top: 24px; padding-top: 16px; border-top: 1px solid rgba(239,234,224,0.08); }
+
+/* ── INCOME ── */
+.income-metrics { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-bottom: 32px; }
+.metric-cell { padding: 24px; border: 1px solid var(--gray); }
+.metric-label { font-family: var(--font-ui); font-size: 11px; text-transform: uppercase; letter-spacing: 0.12em; color: var(--mauve); margin-bottom: 8px; font-stretch: expanded; }
+.metric-value { font-family: var(--serif); font-size: clamp(36px,4.5vw,54px); line-height: 1.05; }
+.metric-note { font-family: var(--font-body); font-size: 13px; color: var(--mauve); margin-top: 4px; }
+.bottom-line-box { background: var(--mustard); color: var(--mud); padding: 24px 28px; border-radius: 2px; }
+.bottom-line-box p { font-family: var(--font-body); font-size: 15px; line-height: 1.6; margin-bottom: 8px; }
+.bottom-line-box .bl-cta { font-family: var(--serif); font-style: italic; font-size: clamp(24px,2.4vw,32px); }
+
+/* ── MARKETING ── */
+.marketing-header { display: flex; align-items: flex-start; gap: 24px; margin-bottom: 40px; position: relative; overflow: hidden; }
+.marketing-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; }
+.marketing-cols h4 { font-family: var(--font-ui); font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 20px; color: var(--rose); font-stretch: expanded; }
+
+/* ── OPPORTUNITY ── */
+#opportunity { background: var(--mud); color: var(--cream); padding: clamp(80px,10vw,140px) clamp(32px,6vw,80px); }
+.opp-left { font-family: var(--serif); font-size: clamp(38px,5.5vw,68px); line-height: 1.05; max-width: 800px; margin-bottom: 40px; }
+.opp-left em, .opp-right em { color: var(--rose); font-style: italic; }
+.opp-right { font-family: var(--serif); font-size: clamp(38px,5.5vw,68px); line-height: 1.05; text-align: right; max-width: 800px; margin-left: auto; }
+
+/* ── RX ── */
+.rx-header { background: var(--mustard); color: var(--mud); padding: 40px clamp(32px,6vw,80px); display: flex; align-items: center; gap: 24px; }
+.rx-mark { font-family: var(--serif); font-style: italic; font-size: clamp(56px,7vw,82px); line-height: 1; opacity: 0.6; }
+.rx-title { font-family: var(--serif); font-size: clamp(30px,4vw,46px); line-height: 1.2; }
+.priority-list { background: var(--white); padding: clamp(32px,4vw,48px) clamp(32px,6vw,80px); }
+.priority-item { display: flex; align-items: flex-start; gap: 24px; padding: 24px 0; border-bottom: 1px solid var(--gray); }
+.priority-num { font-family: var(--serif); font-style: italic; font-size: clamp(56px,7vw,82px); line-height: 1; opacity: 0.15; flex-shrink: 0; min-width: 60px; }
+.priority-content { flex: 1; }
+.priority-title { font-family: var(--serif); font-size: clamp(28px,3.4vw,40px); line-height: 1.15; margin-bottom: 6px; }
+.priority-desc { font-family: var(--font-body); font-size: 14px; line-height: 1.6; color: var(--mauve); }
+
+/* ── OFFER PITCH ── */
+#offer { background: var(--mud); color: var(--cream); display: grid; grid-template-columns: 1.2fr 1fr; padding: clamp(64px,8vw,104px) clamp(32px,6vw,80px); border-bottom: 4px solid var(--rose); }
+.offer-headline { font-family: var(--serif); font-size: clamp(42px,5.5vw,68px); line-height: 1.0; margin-bottom: 16px; }
+.offer-headline em { color: var(--rose); font-style: italic; }
+.offer-sub { font-family: var(--font-body); font-size: 15px; line-height: 1.6; color: var(--mauve); margin-bottom: 32px; }
+.offer-items { padding-left: 0; }
+.offer-item { margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid rgba(239,234,224,0.08); }
+.offer-item-title { font-family: var(--serif); font-size: clamp(26px,2.8vw,34px); line-height: 1.2; margin-bottom: 4px; }
+.offer-item-desc { font-family: var(--font-body); font-size: 14px; line-height: 1.5; color: var(--mauve); }
+.price-box { grid-column: 1/-1; background: var(--rose); color: var(--mud); padding: 28px 32px; margin-top: 40px; display: flex; justify-content: space-between; align-items: center; border-radius: 2px; }
+.price-box .price-text { font-family: var(--serif); font-size: clamp(26px,3vw,36px); }
+.price-box a { color: var(--mud); font-family: var(--font-ui); font-size: 14px; text-decoration: underline; }
+
+/* ── CLOSING ── */
+#closing { background: var(--mud); color: var(--cream); min-height: 100vh; display: flex; flex-direction: column; justify-content: space-between; padding: clamp(64px,8vw,104px) clamp(32px,6vw,80px); }
+.closing-body { max-width: 700px; }
+.closing-body p { font-family: var(--serif); font-size: clamp(38px,5.5vw,64px); line-height: 1.1; margin-bottom: 16px; }
+.closing-body p em { font-style: italic; color: var(--rose); }
+.closing-footer { display: flex; justify-content: space-between; align-items: flex-end; padding-top: 40px; border-top: 1px solid rgba(239,234,224,0.1); }
+.closing-footer a { color: var(--rose); font-family: var(--font-ui); font-size: 14px; text-decoration: none; }
+.closing-footer a:hover { text-decoration: underline; }
+.closing-footer .tagline { font-family: var(--font-ui); font-size: 12px; color: rgba(239,234,224,0.4); text-align: center; }
+.closing-footer .domain { font-family: var(--font-ui); font-size: 12px; color: rgba(239,234,224,0.4); }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 1024px) {
+  .audit-section { grid-template-columns: 220px 1fr; }
+  .glance-cards, .offer-cards { gap: 16px; }
+  #cover { grid-template-columns: 1fr; }
+  .cover-right { display: none; }
+  .split-section { grid-template-columns: 1fr 1.2fr; }
+  #brand-identity { grid-template-columns: 1fr 1.2fr; }
+  #offer { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 768px) {
+  .audit-section { grid-template-columns: 1fr; }
+  .audit-left { padding: 32px 24px; }
+  .audit-left .section-title { margin-top: 32px; }
+  .audit-right { padding: 32px 24px; }
+  .glance-cards, .offer-cards { grid-template-columns: 1fr; }
+  #brand-identity { grid-template-columns: 1fr; }
+  .split-section { grid-template-columns: 1fr; }
+  .infra-grid { grid-template-columns: 1fr; }
+  .marketing-cols { grid-template-columns: 1fr; }
+  .income-metrics { grid-template-columns: 1fr; }
+  #offer { grid-template-columns: 1fr; }
+  .priority-item { flex-direction: column; gap: 8px; }
+  .priority-num { min-width: auto; }
+  .opp-right { text-align: left; }
+  .closing-footer { flex-direction: column; gap: 16px; align-items: flex-start; }
+  .price-box { flex-direction: column; gap: 12px; align-items: flex-start; }
+  #cover { min-height: auto; padding: 48px 24px; }
+}
+</style>
+</head>
+<body>
+
+<!-- ════════ SECTION 1 — COVER ════════ -->
+<section id="cover">
+  <div class="cover-left">
+    <div class="cover-eyebrow">Founding Mothers Media</div>
+    <h1 class="cover-brand">G One<br>Productions</h1>
+    <div class="cover-sub">Ahmod Goins — Content &amp; Paid Ads for Service-Based Businesses</div>
+  </div>
+  <div class="cover-right">
+    <div class="screenshot-placeholder" role="img" aria-label="Placeholder for G One Productions screenshot or founder headshot">Screenshot / Headshot<br>(swap in before deploy)</div>
+  </div>
+  <div class="cover-footer">
+    <div class="cover-footer-left">Brand Architecture Audit — Marketing Firm &amp; Personal Brand, Sanford NC</div>
+    <div class="cover-footer-right">FM &nbsp;|&nbsp; foundingmothersmedia.com</div>
+  </div>
+</section>
+
+<!-- ════════ SECTION 2 — AT A GLANCE ════════ -->
+<section id="glance">
+  <div class="glance-cards">
+    <div class="glance-card">
+      <div class="card-label">Category</div>
+      <div class="card-value">Marketing Firm</div>
+      <div class="card-detail">Content production + Meta paid ads for service businesses</div>
+    </div>
+    <div class="glance-card">
+      <div class="card-label">Revenue Stage</div>
+      <div class="card-value">$6K Retainer</div>
+      <div class="card-detail">Stripe checkout in place · 12-mo goal: $50–$200K/mo</div>
+    </div>
+    <div class="glance-card">
+      <div class="card-label">Core Gap</div>
+      <div class="card-value">Architecture</div>
+      <div class="card-detail">Three brand identities pulling in three directions</div>
+    </div>
+  </div>
+  <div class="glance-summary">
+    <span><strong>What's solid:</strong> A real methodology (3C). A guarantee. GoHighLevel infrastructure. Contracts, Stripe, and a daily content engine you actually sustain.</span>
+    <span style="margin-top: 8px; display: block;"><strong>The honest tension:</strong> G One Productions, Ahmod Goins, and the 3C Content System are three brands competing for one client — and none of them currently speak to the cash-rich, time-poor operator you actually want.</span>
+  </div>
+</section>
+
+<!-- ════════ SECTION 3 — URGENT BAND ════════ -->
+<section id="urgent">
+  <div class="urgent-label">Time-sensitive</div>
+  <div class="urgent-body">Three brand entities are competing for the same client right now. Until they're consolidated under one architecture, every dollar of ad spend and every reel you cut is split across doors that don't lead to the same room.</div>
+</section>
+
+<!-- ════════ SECTION 4 — POSITIONING CLARITY ════════ -->
+<section class="audit-section">
+  <div class="audit-left">
+    <div class="section-eyebrow">Brand Foundation</div>
+    <div class="ghost-num">01</div>
+    <h2 class="section-title">Positioning /<br><em>Clarity</em></h2>
+  </div>
+  <div class="audit-right">
+    <div class="pos-block">
+      <div class="pos-header">
+        <div class="pos-icon check">&#10003;</div>
+        <div class="pos-label">Working</div>
+      </div>
+      <div class="pos-body"><strong>"I help businesses stop guessing where their next customer is coming from."</strong> That line does the work. The 3C framework (Captivate / Connect / Convert) is real, memorable, and yours. The "10–20 leads in 30–45 days or we work for free" guarantee is the kind of declarative promise most agencies refuse to make.</div>
+    </div>
+    <div class="pos-block">
+      <div class="pos-header">
+        <div class="pos-icon warn">!</div>
+        <div class="pos-label">Unclear</div>
+      </div>
+      <div class="pos-body"><strong>Three brand homes are competing for one job.</strong> G One Productions is the firm. Ahmod Goins is the coach/consultant. 3C Content System is the methodology. The live site sits at 3ccontent.me (the product) under the copyright of G One Productions (the company), founded by Ahmod Goins (the person). None of those names telegraphs the exclusivity tier you said you want. Cash-rich, time-poor clients don't read three brand stories — they pick one front door or none.</div>
+    </div>
+    <div class="fix-box">
+      <div class="fix-label">Positioning</div>
+      <div class="fix-body">G One Productions is the in-house growth team for service businesses doing $20K+/month who'd rather hire a partner than another agency.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════ SECTION 5 — BRAND PRESENCE + IDENTITY ════════ -->
+<section id="brand-identity">
+  <div class="bi-left">
+    <div class="section-eyebrow">Visual Brand</div>
+    <h2>Brand<br>&amp; <em>Presence</em></h2>
+    <p class="bi-body"><strong>The copy is sharp; the visual tone is templated.</strong> The live site reads as a GoHighLevel-style direct-response funnel — heavy caps, dollar signs, performance-marketer cadence. That voice converts cold traffic. It does <em>not</em> attract the operator who has more cash than time and is choosing between you and a high-touch in-house hire. For that client, the design has to telegraph judgment and taste before they read a single word.</p>
+  </div>
+  <div class="bi-right">
+    <div class="bi-screenshot" role="img" aria-label="Placeholder for 3ccontent.me screenshot">Screenshot of 3ccontent.me<br>(swap in before deploy)</div>
+    <div class="impression-item">
+      <div class="imp-icon check">&#10003;</div>
+      <div>
+        <div class="imp-title">Direct, confident hook</div>
+        <div class="imp-desc">"Become The Go-To Business With Content and Local Paid Ads" is a clear, owned promise.</div>
+      </div>
+    </div>
+    <div class="impression-item">
+      <div class="imp-icon warn">!</div>
+      <div>
+        <div class="imp-title">Templated funnel aesthetic</div>
+        <div class="imp-desc">Reads as another lead-gen agency. Visual restraint would do more for premium positioning than another testimonial.</div>
+      </div>
+    </div>
+    <div class="impression-item">
+      <div class="imp-icon warn">!</div>
+      <div>
+        <div class="imp-title">Two competing CTAs</div>
+        <div class="imp-desc">"Apply Here" form + "Book Your Free Strategy Call" pull the same lead in two directions. Pick one path.</div>
+      </div>
+    </div>
+    <div class="impression-item">
+      <div class="imp-icon warn">!</div>
+      <div>
+        <div class="imp-title">Contract language conflicts with itself</div>
+        <div class="imp-desc">Terms checkbox says "minimum 4-month commitment" then "this is a 6-month commitment" in the same sentence. Fix before another dollar of ad spend hits the page.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════ SECTION 6 — THE REFRAME ════════ -->
+<section class="split-section">
+  <div class="split-left">
+    <div class="section-eyebrow">Copy + Voice</div>
+    <div class="ghost-num">03</div>
+    <h2 class="section-title">The /<br>Reframe</h2>
+    <div class="current-copy-label">Currently live on 3ccontent.me:</div>
+    <div class="current-copy">"If You're Still Relying on Referrals or Outdated Marketing to Grow Your Business — You're Leaving Money on the Table $$$$"</div>
+  </div>
+  <div class="split-right">
+    <p>I help businesses stop guessing where their next customer is coming from. I learn a business, figure out why growth is stuck, and build the systems around content and marketing that fix it.</p>
+    <p><em>Part strategist. Part creative director. Part problem solver.</em> Not a vendor you swap out next quarter — a growth partner you keep.</p>
+    <p>I work with operators who have more cash than time. The ones who want to <em>dominate their space and eat up market share</em> — and would rather hand the whole thing to someone they trust than build a marketing department from scratch.</p>
+  </div>
+</section>
+
+<!-- ════════ SECTION 7 — OFFER ARCHITECTURE ════════ -->
+<section id="offer-arch">
+  <div class="currently-box">
+    <div class="cb-label">Current Offer State</div>
+    <div class="cb-body"><strong>One door. One price. No staircase.</strong> The 3C Content System retainer at $6K is the front door — clear deliverables, a results guarantee, Stripe behind it. What's missing is the rest of the architecture. There's no entry product to filter cash-rich clients from tire-kickers, and there's no premium tier to capture the operator who'd happily pay $15K for the same outcome with white-glove service. Every lead enters at the same price; every conversation has the same ceiling.</div>
+  </div>
+  <div class="offer-cards">
+    <div class="offer-card">
+      <div class="offer-num">1</div>
+      <div class="offer-tier">Entry</div>
+      <div class="offer-name">Strategy Intensive</div>
+      <div class="offer-desc">Half- or full-day audit of existing content, ad creative, and messaging. $1,500–$2,500. Stand-alone value. The filter that separates "interested" from "ready."</div>
+    </div>
+    <div class="offer-card">
+      <div class="offer-num">2</div>
+      <div class="offer-tier">Core</div>
+      <div class="offer-name">3C Growth Partnership</div>
+      <div class="offer-desc">Reposition the current $6K retainer as a growth partnership, not a lead-gen service. Tighten scope. Raise to $9.5K–$12K. Same delivery, different identity.</div>
+    </div>
+    <div class="offer-card">
+      <div class="offer-num">3</div>
+      <div class="offer-tier">Premium</div>
+      <div class="offer-name">Ad Creative Workshop</div>
+      <div class="offer-desc">Your unlaunched offer. 1-day or 3-day intensive — messaging, ad creation, content system, funnel automation. $8K–$15K. The case studies are already inside your retainer clients. Package what's there.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════ SECTION 8 — BACK-END INFRASTRUCTURE ════════ -->
+<section class="dark-section">
+  <div class="section-eyebrow">Operations</div>
+  <div style="display: flex; align-items: flex-start; gap: 24px; position: relative; overflow: hidden;">
+    <div class="ghost-num" style="position: relative; top: auto; left: auto; font-size: clamp(48px,6vw,72px); opacity: 0.06;">05</div>
+    <h2 class="section-title">Back-End<br>Infrastructure</h2>
+  </div>
+  <div class="infra-grid">
+    <div>
+      <ul class="status-list">
+        <li><span class="status-icon check">&#10003;</span> Stripe checkout — payments solved.</li>
+        <li><span class="status-icon check">&#10003;</span> Written contracts in place.</li>
+        <li><span class="status-icon check">&#10003;</span> GoHighLevel hosting the funnel + automations.</li>
+        <li><span class="status-icon check">&#10003;</span> Daily content production cadence (1+ reel/day).</li>
+        <li><span class="status-icon gap">&#9651;</span> "Dropping the ball on" — paid on time, looking professional, time, follow-up, what to charge, client tracking. That's not six problems. That's one missing operating system.</li>
+        <li><span class="status-icon gap">&#9651;</span> No client-facing reporting dashboard surfaced on the LP (you mention it in the offer — show it).</li>
+        <li><span class="status-icon gap">&#9651;</span> Booking field flagged "None yet" — but GHL has calendars. Either wire it on or surface what's already there.</li>
+        <li><span class="status-icon gap">&#9651;</span> No visible CRM workflow tying lead → onboarded client → renewal.</li>
+      </ul>
+    </div>
+    <div>
+      <div class="tool-box">
+        <h4>Tighten What You Have</h4>
+        <div class="tool-item">
+          <div class="tool-name">GoHighLevel — used harder</div>
+          <div class="tool-desc">You already pay for it. Lean into calendars, pipelines, and tagging. Stop tracking clients by memory. Included in current subscription.</div>
+        </div>
+        <div class="tool-item">
+          <div class="tool-name">Notion or ClickUp</div>
+          <div class="tool-desc">Single source of truth for client deliverables, timelines, and content calendars. $0–$10/user/mo. Where "follow-up" becomes a system, not a discipline.</div>
+        </div>
+        <div class="tool-item">
+          <div class="tool-name">Loom</div>
+          <div class="tool-desc">Async monthly client success videos. Replaces half your meetings. Free tier works. The "Chick-fil-A consistency" you said you want starts here.</div>
+        </div>
+        <div class="tool-item">
+          <div class="tool-name">A clean ICP filter on intake</div>
+          <div class="tool-desc">3 questions on your application form that disqualify anyone under $20K/mo or anyone shopping for a "bandage." This kills the cheap-retainer problem at the gate.</div>
+        </div>
+        <div class="tool-cta">The goal isn't more tools. It's one system that holds every client without your memory in the loop.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════ SECTION 9 — INCOME ARCHITECTURE ════════ -->
+<section class="audit-section">
+  <div class="audit-left">
+    <div class="section-eyebrow">The Math</div>
+    <div class="ghost-num">06</div>
+    <h2 class="section-title">Income /<br><em>Architecture</em></h2>
+  </div>
+  <div class="audit-right">
+    <div class="income-metrics">
+      <div class="metric-cell">
+        <div class="metric-label">Current Retainer</div>
+        <div class="metric-value">$6K</div>
+        <div class="metric-note">3C Content System</div>
+      </div>
+      <div class="metric-cell">
+        <div class="metric-label">12-Month Goal</div>
+        <div class="metric-value">$100K+/mo</div>
+        <div class="metric-note">Midpoint of your $50–200K target</div>
+      </div>
+      <div class="metric-cell">
+        <div class="metric-label">Retainers Needed</div>
+        <div class="metric-value">17 → 7</div>
+        <div class="metric-note">At $6K: 17. At $15K: 7. Same revenue, different business.</div>
+      </div>
+      <div class="metric-cell">
+        <div class="metric-label">Stream 2</div>
+        <div class="metric-value">Workshop</div>
+        <div class="metric-note">$8K–$15K intensives, project-based</div>
+      </div>
+    </div>
+    <div class="bottom-line-box">
+      <p><strong>Your own words:</strong> "I feel like I'm worth $10K–$20K. I'm still offering commodities that anyone can produce."</p>
+      <p>At $6K you're carrying 17 retainers to hit $100K/mo. That's a team of account managers and a full-time client services lead. At $12K with a tighter ICP, it's 8. At $15K with premium positioning, it's 7. The path to your number runs through price and positioning, not volume.</p>
+      <div class="bl-cta">You said you're worth it. Charge it.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════ SECTION 10 — MARKETING + CONTENT ════════ -->
+<section class="dark-section">
+  <div class="marketing-header">
+    <div class="ghost-num" style="position: relative; top: auto; left: auto; font-size: clamp(48px,6vw,72px); opacity: 0.06;">07</div>
+    <div>
+      <div class="section-eyebrow">Visibility</div>
+      <h2 class="section-title">Marketing +<br>Content</h2>
+    </div>
+  </div>
+  <div class="marketing-cols">
+    <div>
+      <h4>What's Working</h4>
+      <ul class="status-list">
+        <li><span class="status-icon check">&#10003;</span> 1 reel per day — rare. Most operators can't sustain this.</li>
+        <li><span class="status-icon check">&#10003;</span> Distribution across IG, Facebook, LinkedIn, YouTube.</li>
+        <li><span class="status-icon check">&#10003;</span> @g_oneproductions bio claims "trusted by 50+ brands" — proof exists; surface it.</li>
+        <li><span class="status-icon check">&#10003;</span> Personal voice is direct, confident, and unmistakably yours.</li>
+        <li><span class="status-icon check">&#10003;</span> Referrals already happening (Chris from Predictable Sales sent you here).</li>
+      </ul>
+      <div class="fix-box" style="margin-top: 24px;">
+        <div class="fix-label">The unlock</div>
+        <div class="fix-body">The volume is there. The narrative isn't. Every reel should make one promise: "I'm the operator who solves this for businesses like yours."</div>
+      </div>
+    </div>
+    <div>
+      <h4>What Needs Building</h4>
+      <ul class="status-list">
+        <li><span class="status-icon gap">&#9651;</span> Public case studies. You have them — they're locked inside retainer agreements. Package them.</li>
+        <li><span class="status-icon gap">&#9651;</span> One central home. Right now: 3ccontent.me + IG + FB + LinkedIn + YouTube — none link to each other as a system.</li>
+        <li><span class="status-icon gap">&#9651;</span> Consolidation of @ahmodgoins_ and @g_oneproductions. Different jobs, different content, but they need to feed one funnel.</li>
+        <li><span class="status-icon gap">&#9651;</span> Replace bro-marketer cap-lock copy with the "growth partner" voice from your intake. The intake voice converts your real ICP. The site voice converts startups.</li>
+        <li><span class="status-icon gap">&#9651;</span> Sales calls without prospecting: turn your daily content into the prospecting engine, not a parallel task.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ════════ SECTION 11 — THE BIG OPPORTUNITY ════════ -->
+<section id="opportunity">
+  <div class="opp-left">You don't need <em>more leads.</em> You need fewer, better-fit clients who can pay what you're <em>actually worth.</em></div>
+  <div class="opp-right">Three brands pointing in three directions becomes <em>one firm with one offer</em> — and the cash-rich, time-poor client finally sees themselves in it.</div>
+</section>
+
+<!-- ════════ SECTION 12 — rX PRIORITIES ════════ -->
+<div class="rx-header">
+  <div class="rx-mark">rX</div>
+  <h2 class="rx-title">Do these 6 things. In this order.</h2>
+</div>
+<section class="priority-list">
+  <div class="priority-item">
+    <div class="priority-num">1</div>
+    <div class="priority-content">
+      <div class="priority-title">Consolidate the brand architecture under G One Productions</div>
+      <div class="priority-desc">G One is the firm. Ahmod Goins is the founder voice. 3C Content System is the methodology — a product inside the firm, not a separate brand. Make the homepage live at g1productions.com (or the proper G One domain). Keep 3ccontent.me as a campaign landing page only.</div>
+    </div>
+  </div>
+  <div class="priority-item">
+    <div class="priority-num">2</div>
+    <div class="priority-content">
+      <div class="priority-title">Rewrite the hero around "growth partner," not "lead system"</div>
+      <div class="priority-desc">Use your own verbatim line: "Part strategist, part creative director, part problem solver." Then your promise: "I help businesses stop guessing where their next customer is coming from." That two-line hero out-converts $$$$ copy with your real ICP.</div>
+    </div>
+  </div>
+  <div class="priority-item">
+    <div class="priority-num">3</div>
+    <div class="priority-content">
+      <div class="priority-title">Raise the core retainer to $9.5K–$12K and add a $1.5K–$2.5K entry intensive</div>
+      <div class="priority-desc">Same delivery, tighter scope, new identity (Growth Partnership, not Content System). The entry intensive becomes your ICP filter and a stand-alone revenue stream. Cash-rich clients self-select up; tire-kickers self-eject.</div>
+    </div>
+  </div>
+  <div class="priority-item">
+    <div class="priority-num">4</div>
+    <div class="priority-content">
+      <div class="priority-title">Launch the Ad Creative Workshop as a 1-day intensive at $8K</div>
+      <div class="priority-desc">Your unlaunched offer. You said you don't have enough case studies — you do, they're inside your retainers. Package what exists. Productize the workshop with a tight outline, a deposit page, and a single dated cohort to force the launch. This one is on our list.</div>
+    </div>
+  </div>
+  <div class="priority-item">
+    <div class="priority-num">5</div>
+    <div class="priority-content">
+      <div class="priority-title">Pick one social brand per job</div>
+      <div class="priority-desc">@g_oneproductions = the firm. Client work, case studies, behind-the-scenes. @ahmodgoins_ = the founder voice. POV, frameworks, thought leadership. Both feed the same funnel. Stop running them as competing identities.</div>
+    </div>
+  </div>
+  <div class="priority-item">
+    <div class="priority-num">6</div>
+    <div class="priority-content">
+      <div class="priority-title">Fix the funnel mechanics on 3ccontent.me before more spend</div>
+      <div class="priority-desc">Resolve the 4-month vs 6-month T&amp;C contradiction. Surface client testimonials and one named case study above the fold. Remove the second CTA so one path drives every lead. Three small fixes; compounding return on every existing ad dollar.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════ SECTION 13 — OFFER PITCH ════════ -->
+<section id="offer">
+  <div>
+    <h2 class="offer-headline">Bring me into<br><em>the ecosystem.</em><br>Let's build your<br><em>next era together.</em></h2>
+    <p class="offer-sub"><strong>The Partnership.</strong> A 6-month fractional brand leadership engagement for founders who've moved beyond "I need a website" and are now asking, "I need someone who understands the whole ecosystem." Not full-time. Not in-house. Not agency overhead. A creative partner inside the business — guiding the brand, the offers, the website, the systems, the content, and the client experience as one living thing.</p>
+  </div>
+  <div class="offer-items">
+    <div class="offer-item">
+      <div class="offer-item-title">Brand Leadership + Creative Direction</div>
+      <div class="offer-item-desc">Ongoing strategic decision support across the ecosystem. The brand architecture call (G One vs. Ahmod vs. 3C) gets made — and then keeps evolving as the business does. You stop re-explaining yourself to freelancers every quarter.</div>
+    </div>
+    <div class="offer-item">
+      <div class="offer-item-title">Monthly Priority Map + Implementation</div>
+      <div class="offer-item-desc">One Decision Disco at the top of each month. One major build priority + two smaller asks. One monthly build sprint. Defined implementation hours. End-of-month recap. The Chick-fil-A consistency you said you want — but for the brand, not the back-end.</div>
+    </div>
+    <div class="offer-item">
+      <div class="offer-item-title">Website, Offer, Messaging + Systems Evolution</div>
+      <div class="offer-item-desc">Steady evolution of the homepage, offer ladder (Entry · Core · Premium), sales language, and client-facing systems — so the brand keeps up with the business instead of becoming a beautiful little fossil.</div>
+    </div>
+  </div>
+  <div class="price-box">
+    <div class="price-text">The Partnership — $5K setup + $2K/mo &times; 5 · By application</div>
+    <a href="https://foundingmothersmedia.com" target="_blank" rel="noopener">foundingmothersmedia.com</a>
+  </div>
+</section>
+
+<!-- ════════ SECTION 13B — DOWNSELL: THE MAP ════════ -->
+<section style="background: var(--cream); padding: clamp(48px,6vw,80px) clamp(32px,6vw,80px); border-bottom: 3px solid var(--mud);">
+  <div style="display: grid; grid-template-columns: 1fr 1.4fr; gap: 48px; align-items: start; max-width: 1200px; margin: 0 auto;" class="downsell-grid">
+    <div>
+      <div style="font-family: var(--font-ui); font-size: 11px; text-transform: uppercase; letter-spacing: 0.12em; color: var(--mauve); margin-bottom: 12px; font-stretch: expanded;">Not Ready for the Partnership?</div>
+      <h3 style="font-family: var(--serif); font-size: clamp(34px,4.2vw,52px); line-height: 1.05; color: var(--mud); margin-bottom: 16px;">Start with <em style="color: var(--mauve);">The Map.</em></h3>
+      <p style="font-family: var(--font-body); font-size: 15px; line-height: 1.7; color: var(--mud);">A 2-day creative direction intensive. Two 90-minute workshops, strategic mapping in between, and one buildable plan you can act on — covering brand architecture, offer suite, website flow, messaging, funnel, and systems.</p>
+    </div>
+    <div>
+      <div style="background: var(--white); padding: 32px; border-top: 3px solid var(--mustard);">
+        <div style="font-family: var(--font-ui); font-size: 11px; text-transform: uppercase; letter-spacing: 0.12em; color: var(--mauve); margin-bottom: 8px; font-stretch: expanded;">The Map</div>
+        <div style="font-family: var(--serif); font-size: clamp(36px,4vw,52px); line-height: 1.05; color: var(--mud); margin-bottom: 16px;">$2,500</div>
+        <p style="font-family: var(--font-body); font-size: 14px; line-height: 1.6; color: var(--mauve); margin-bottom: 16px;">2-day intensive · Pre-intake + Day 1 workshop · Independent strategic mapping · Day 2 presentation + working session · Buildable plan + priority sequence.</p>
+        <p style="font-family: var(--serif); font-style: italic; font-size: clamp(18px,1.8vw,22px); color: var(--mud); line-height: 1.4;">Your full investment applies forward toward The Partnership if you decide to keep building together.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+@media (max-width: 768px) {
+  .downsell-grid { grid-template-columns: 1fr !important; }
+}
+</style>
+
+<!-- ════════ SECTION 14 — CLOSING ════════ -->
+<section id="closing">
+  <div class="closing-body">
+    <p>You already know <em>what you're worth.</em></p>
+    <p><em>The work now</em> is making sure your brand says it too.</p>
+    <p>One firm. One offer.</p>
+    <p><em>One door.</em></p>
+  </div>
+  <div class="closing-footer">
+    <a href="https://foundingmothersmedia.com">Let's Work Together</a>
+    <div class="tagline">brand architecture for creative visionaries (&amp; total babes)</div>
+    <div class="domain">foundingmothersmedia.com</div>
+  </div>
+</section>
+
+</body>
+</html>
